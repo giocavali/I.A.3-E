@@ -20,4 +20,7 @@ const pergunta = [//abre a lista de objetos (itens)
 let posicao = 0;
 let perguntaAtual;
 
-function mostraPergunta(){}
+function mostraPergunta(){
+    perguntaAtual = perguntas[posicao].enunciado;
+    caixapergunta.textContent = perguntaAtual.enunciado;
+}
