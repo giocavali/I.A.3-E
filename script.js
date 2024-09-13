@@ -26,5 +26,9 @@ function mostraPergunta(){
     mostraAlternativas();
 }
 function mostrarAlternativas(){
-    for
+    for (const alternativa of perguntaAtual.alternativa){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa;
+        caixaAlternativa.appendChild(botaoAlternativa);
+    }
 }
