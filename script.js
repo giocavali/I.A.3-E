@@ -8,69 +8,71 @@ const perguntas = [//abre a lista de objetos (itens)
         enunciado: "Você gosta da Inteligência Artificial?",
         alternativas: [{
             texto: "Sim",
-            afirmação: "she's crazy."
+            afirmação: "Porque ela revoluciona o mundo."
         },
         {
             texto: "Não",
-            afirmação: "ela veio para controlar os seres humanos e vai nos manipular a favor do governo."
+            afirmação: "Ela veio para dominar o mundo!!"
         }
         ]
     },
     {
-        enunciado: "Você acha a imteligência artificial eficiente?",
+        enunciado: "A inteligência artificial vai no matar?!",
         alternativas: [{
-            texto: "Sim",
-            afirmação: "ela nos ajudar no cotidiano."
+            texto: "Possivelmente",
+            afirmação: "Toma cuidado!!"
         },
         {
-            texto:"Não",
-            afirmação:"ela causa demência na inteligência humana, por conta da facilitação da busca de informações."
+            texto:"Jamais...Mas",
+            afirmação:"Nunca de as costas a ela."
         }
         ]
     },
     {
-        enunciado: "Você acha que a inteligência artificial vai acabar com o mundo e a humanidade?",
+        enunciado: "Você usa a IA no cotidiano?",
         alternativas: [{
             texto: "Sim",
-            afirmação: "ela vai nos MATAR!!"
+            afirmação: "Não sou capaz de fazer nada sozinho."
         },
         {
             texto: "Não",
-            afirmação: "claro que não"
+            afirmação: "Acho pura bestera essa coisa de IA."
         }
         ]
     }
 ]
 let posicao = 0;
 let perguntaAtual;
-let resposta = "";
+let respostas = "";
 
 
 function mostraPergunta() {
     if (posicao>=perguntas.length){
         mostraResultado();
-    return;
+        return;
     }
     perguntaAtual = perguntas[posicao];
     caixaPergunta.textContent = perguntaAtual.enunciado;
-    caixaAlternativa.textContent = "";
+    caixaAlternativa.textContent = " ";
     mostraAlternativas();
 }
 function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click",  ()=> respostasSelecionadas(alternativa));
+        botaoAlternativas.addEventListener("click",  () => respostasSelecionadas(alternativa));
         caixaAlternativa.appendChild(botaoAlternativas);
     }
 }
 function respostasSelecionadas(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    respostas = afirmacoes;
+    const afirmacoes = opcaoSelecionada.afirmação;
+    respostas += afirmacoes + " ";
     posicao++;
-    mostraPergunta()
+    mostraPergunta();
 }
 function mostraResultado(){
-    caixaPergunta.textContent = "Daqui a 10 anos... ";
+    caixaPergunta.textContent = "Confira suas respostas: ";
+    textoResultado.textContent = respostas; 
+    caixaAlternativa.textContent = "";
 }
 mostraPergunta();
