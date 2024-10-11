@@ -2,41 +2,42 @@ const caixaPrincipal = document.querySelector('.caixa-principal');
 const caixaPergunta = document.querySelector('.caixa-pergunta');
 const caixaAlternativa = document.querySelector('.caixa-alternativa');
 const caixaResultado = document.querySelector('.caixa-resultado');
+const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [//abre a lista de objetos (itens)
     {//abre o item
-        enunciado: "Você gosta da Inteligência Artificial?",
+        enunciado: "Você acha que ENEM é coisa de louco?",
         alternativas: [{
-            texto: "Sim",
-            afirmação: "Porque ela revoluciona o mundo."
+            texto: "Sim, só louco para pensar nisso.",
+            afirmação: "Mataria o mesário se fosse necessário."
         },
         {
-            texto: "Não",
-            afirmação: "Ela veio para dominar o mundo!!"
+            texto: "Não, ele nos ajuda.",
+            afirmação: "Nos dá oportunidades para engressar na faculdade."
         }
         ]
     },
     {
-        enunciado: "A inteligência artificial vai no matar?!",
+        enunciado: "Que curso você faria??",
         alternativas: [{
-            texto: "Possivelmente",
-            afirmação: "Toma cuidado!!"
+            texto: "Possivelmente exatas",
+            afirmação: "Para calcualr o ângulo, para dar um tiro perfeito na cabeça do mesário."
         },
         {
-            texto:"Jamais...Mas",
-            afirmação:"Nunca de as costas a ela."
+            texto:"Provavelmente humanas",
+            afirmação:"Curto um baseaso haaaaaaa!!"
         }
         ]
     },
     {
-        enunciado: "Você usa a IA no cotidiano?",
+        enunciado: "Está preparado(a)",
         alternativas: [{
-            texto: "Sim",
-            afirmação: "Não sou capaz de fazer nada sozinho."
+            texto: "Sim.",
+            afirmação: "Estudei muito para isso."
         },
         {
-            texto: "Não",
-            afirmação: "Acho pura bestera essa coisa de IA."
+            texto: "Não sei",
+            afirmação: "Acho que vou matar o mesário."
         }
         ]
     }
